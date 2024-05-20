@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "7e7f2420-d149-411f-91d7-df0ea0781744",
+		"name": "talkRoom-express-render(w7-prod)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29835428"
+	},
+	"item": [
+		{
+			"name": "會員功能",
+			"item": [
+				{
+					"name": "GET取得user個人資料",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NDc4MDBjNGM2MjdlNDk5OWY1OTI5YyIsImlhdCI6MTcxNTk2MTg2OCwiZXhwIjoxNzE2NTY2NjY4fQ.MWyhQUuSFresCX38quAYHPWVDA6nvQRal3lvnKaHgOs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST註冊user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"aaa111\",\r\n    \"email\":\"1@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/users/sign_up",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST登入user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"123@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/users/sign_in",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST重設user密碼",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NDc4MDBjNGM2MjdlNDk5OWY1OTI5YyIsImlhdCI6MTcxNTk2MTg2OCwiZXhwIjoxNzE2NTY2NjY4fQ.MWyhQUuSFresCX38quAYHPWVDA6nvQRal3lvnKaHgOs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"23456789\",\r\n    \"confirmPassword\":\"23456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/users/updatePassword",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH更新user個人資料",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NDc4MDBjNGM2MjdlNDk5OWY1OTI5YyIsImlhdCI6MTcxNTk2MTg2OCwiZXhwIjoxNzE2NTY2NjY4fQ.MWyhQUuSFresCX38quAYHPWVDA6nvQRal3lvnKaHgOs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"photo\":\"www.@phtot.com.tw\",\r\n    \"name\":\"a11\",\r\n    \"sex\":\"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "發文功能",
+			"item": [
+				{
+					"name": "GET取得post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST新增單筆post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"66373adb0f43a85a4e62da08\",\r\n    \"location\":\"台北市\",\r\n    \"type\":\"group\",\r\n    \"tags\":\"迷因\",\r\n    \"content\":\"我是測試資料\",\r\n    \"image\":\"http://dummyimage.com/197x100.png/dddddd/000000\",\r\n    \"likes\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL刪除全部post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DEL刪除指定post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts/662697cb6194ef0af47f9ab1",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"662697cb6194ef0af47f9ab1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH修改指定post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":\"6630ac10bd75de0e845aaf80\",\r\n    \"location\":\"台北市\",\r\n    \"type\":\"group\",\r\n    \"tags\":\"迷因\",\r\n    \"content\":\"我修改了~~\",\r\n    \"image\":\"http://dummyimage.com/197x100.png/dddddd/000000\",\r\n    \"likes\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts/66269ebe20481c1a7b2d7691",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"66269ebe20481c1a7b2d7691"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET取得post(排序,關鍵字)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/posts?timeSort=asc&keywords=修改",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "timeSort",
+									"value": "asc"
+								},
+								{
+									"key": "keywords",
+									"value": "修改"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "上傳圖片功能",
+			"item": [
+				{
+					"name": "POST上傳圖片",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NDc4MDBjNGM2MjdlNDk5OWY1OTI5YyIsImlhdCI6MTcxNTk2MTg2OCwiZXhwIjoxNzE2NTY2NjY4fQ.MWyhQUuSFresCX38quAYHPWVDA6nvQRal3lvnKaHgOs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://node-w7-1.onrender.com/upload",
+							"protocol": "https",
+							"host": [
+								"node-w7-1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
