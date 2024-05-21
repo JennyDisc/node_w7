@@ -74,7 +74,7 @@ app.use(function (err, req, res, next) {
     }
     // 正式環境 production
     // isAxiosError 是 axios 套件提供的錯誤屬性
-    if (err.isAxiosError == true) {
+    if (err.isAxiosError === true) {
         err.message = "axios 連線錯誤";
         err.isOperational = true;
         return resErrorProd(err, res)

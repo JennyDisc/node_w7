@@ -21,7 +21,7 @@ const userController = {
         // users collection 裡查無要新增的這筆 user email 時會回傳 null
         const user = await User.findOne({ email }, 'name').exec();
         // 輸入不存在於 users collection 的 email 時回傳 null (才能執行註冊)
-        if (user == null) {
+        if (user === null) {
             // 加入驗證，確保使用者註冊資料符合格式
             // 這三個欄位為必填
             if (!name || !email || !password) {
@@ -105,7 +105,7 @@ const userController = {
             name,
             sex
         },
-            { new: true }
+            { new: true, runValidators: true }
         );
         successHandle(res, patchUser, null);
     }
