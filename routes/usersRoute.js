@@ -23,8 +23,6 @@ router.get('/profile', isAuth, function (req, res, next) {
 // router.get('/', isAuth, UserController.getUser) 
 
 // 更新個人資料
-router.patch('/profile', isAuth, function (req, res, next) {
-  UserController.patchUser(req, res);
-});
+router.patch('/profile', isAuth, handleErrorAsync(UserController.patchUser));
 
 module.exports = router;
