@@ -9,9 +9,9 @@ const firebaseAdmin = require('../service/firebase');
 const bucket = firebaseAdmin.storage().bucket();
 
 const uploadController = {
-    async upload(req, res) {
+    async upload(req, res, next) {
         if (!req.files.length) {
-            return next(appError(400, "尚未上傳檔案", next));
+            return next(appError(400, "尚未上傳檔案"));
         }
         // 取得上傳的檔案資訊列表裡面的第一個檔案
         const file = req.files[0];
@@ -43,6 +43,7 @@ const uploadController = {
 
         // 如果上傳過程中發生錯誤，會觸發 error 事件
         blobStream.on('error', (err) => {
+            console.log('hhh')
             next(appError(500, "上傳失敗"));
         });
 
