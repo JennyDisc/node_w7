@@ -94,6 +94,12 @@ app.use(function (err, req, res, next) {
         err.isOperational = true;
         return resErrorProd(err, res)
     }
+    // 自訂上傳圖片檔案限制的錯誤回傳
+    else if (err.message === 'File too large') {
+        err.message = "圖片檔案不得超過2MB";
+        err.isOperational = true;
+        return resErrorProd(err, res)
+    }
     resErrorProd(err, res)
 });
 
